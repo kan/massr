@@ -20,6 +20,10 @@ RSpec.configure do |config|
 	end
 end
 
+def session
+  last_request.env['rack.session']
+end
+
 def prototype_user(no)
 	[
 		{
@@ -52,6 +56,22 @@ def prototype_statement(no,user)
 			:body  => 'ほんぶんだよ２！',
 			:photo => 'http://example.com/baa.jpg',
 			:user  => user
+		}
+	][no]
+end
+
+def prototype_twitter(no)
+	[
+		{
+			:provider  => 'twitter',
+			:uid => '1234567890',
+			'extra'  =>  {
+				'raw_info' => {
+					'name' => 'twitter_user_name',
+					'screen_name' => 'twitter_screen_name',
+					'profile_image_url' => 'http://example.com/twitter_icon_url.png'
+				}
+			}
 		}
 	][no]
 end
