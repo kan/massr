@@ -141,7 +141,9 @@ div.new-post textarea, div.response textarea {
 }
 
 #photo-shadow {
-	display: none;
+	opacity: 0;
+	display: inline;
+	width: 10px;
 }
 
 #photo-items {
