@@ -176,12 +176,19 @@ $(function(){
 	 * photo upload
 	 */
 	$(document).on('change', '#photo-shadow', function(){
+		message.info('photo-shadow changed');
 		var fileName = $(this).attr('value').replace(/\\/g, '/').replace(/.*\//, '');
 		$('#photo-name').empty().append(fileName);
 		return false;
 	});
 
+	$(document).on('click', '#photo-shadow', function(){
+		message.info('photo-shadow clicked');
+		return true;
+	});
+
 	$(document).on('click', '#photo-button', function(){
+		message.info('photo-button clicked');
 		$('#photo-shadow').trigger('click');
 		return false;
 	});
